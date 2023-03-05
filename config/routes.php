@@ -10,5 +10,10 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
     $response->getBody()->write("Hello, $name");
     return $response;
 });
+// 追加のルーティング
+$app->get('/', function (Request $request, Response $response, array $args) {
+    $response->getBody()->write("Top Page");
+    return $response;
+});
 
 
