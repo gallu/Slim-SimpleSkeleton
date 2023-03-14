@@ -16,4 +16,4 @@ $app->get('/', function (Request $request, Response $response, array $args) {
     return $response;
 });
 
-
+https://www.slimframework.com/docs/v3/objects/router.html
