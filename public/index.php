@@ -10,4 +10,9 @@ $app = AppFactory::create();
 // ルーティングの読み込み
 require __DIR__ . '/../config/routes.php';
 
-$app->run();
+// XXX いったん雑に例外を把握
+try {
+    $app->run();
+} catch(\Throwable $e) {
+    echo $e->getMessage();
+}
