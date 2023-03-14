@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 class HomeController
 {
     // XXX 1クラスに「1つしかメソッドを書くつもりがない」場合、こういった書き方もできる
-    public function __invoke(Request $request, Response $response, $routeArguments)
+    public function __invoke(Request $request, Response $response, $args)
     {
         // 出力
         $response->getBody()->write("Top Page");
