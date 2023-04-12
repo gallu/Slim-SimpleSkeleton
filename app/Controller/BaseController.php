@@ -8,7 +8,7 @@ use DI\Container;
 class BaseController
 {
     public function __construct(
-        protected ?Container $container,
+        protected Container $container,
     ) {
     }
 }
