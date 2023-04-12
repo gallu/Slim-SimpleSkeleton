@@ -1,3 +1,4 @@
 composer require slim/slim
 composer require slim/psr7
 
+composer require php-di/slim-bridge
