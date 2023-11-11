@@ -10,10 +10,10 @@ php -S 0.0.0.0:8080 -t public public/index.php
 installする時は
 
 ```
-php composer.phar create-project gallu/gallu/slim-simpleskeleton [my-app-name]
+composer create-project gallu/slim4-simple-skeleton [作成するディレクトリ名]
 ```
 
-でできる……用にする予定です(できたら文章を修正します)。
+で行ってください。
 
 
 
