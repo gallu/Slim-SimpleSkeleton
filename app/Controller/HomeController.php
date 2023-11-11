@@ -12,9 +12,6 @@ class HomeController extends BaseController
     public function __invoke(Request $request, Response $response, $args)
     {
         // 出力
-//var_dump($this->container ?? null);
-var_dump($this->container->get('setting'));
-        $response->getBody()->write("Top Page");
-        return $response;
+        return $this->write($response, 'index.twig');
     }
 }

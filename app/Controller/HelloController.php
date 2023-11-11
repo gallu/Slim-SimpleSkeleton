@@ -11,8 +11,11 @@ class HelloController extends BaseController
     // 多分「よくある」系の書き方
     public function index(Request $request, Response $response, $args)
     {
-        $name = $args['name'];
-        $response->getBody()->write("Hello, $name");
-        return $response;
+        // データを拾う
+        $context = [
+            'name' => $args['name'],
+        ];
+        // 出力
+        return $this->write($response, 'hello.twig', $context);
     }
 }
