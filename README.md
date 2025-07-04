@@ -17,7 +17,7 @@ composer create-project gallu/slim4-simple-skeleton  [my-app-name]
 以下でサーバを起動できます：
 
 ```bash
-php -S 0.0.0.0:8080 -t public public/index.php
+php -S 0.0.0.0:8080 -t public
 ```
 
 もしくは、以下のスクリプトも使えます：
