@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -8,6 +9,6 @@ return [
     // テンプレートエンジン設定
     'renderer' => [
         // テンプレートの場所
-        'template_path' => BASEPATH . '/templates',
+        'template_path' => BASEPATH . '/templates', // @phpstan-ignore-line
     ],
 ];

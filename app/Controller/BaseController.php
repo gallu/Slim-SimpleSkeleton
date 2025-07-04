@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -18,8 +19,12 @@ class BaseController
 
     /**
      * setNameからURIを取得するためのラッパー
+     *
+     * @param string                $name   Route name
+     * @param array<string, string> $data        Named argument replacement data
+     * @param array<string, string> $queryParams Optional query string parameters
      */
-    protected function urlFor(string $name, array $data = [], array $queryParams = [])
+    protected function urlFor(string $name, array $data = [], array $queryParams = []): string
     {
         return $this->container->get('router')->getRouteParser()->urlFor($name, $data, $queryParams);
     }
@@ -27,7 +32,7 @@ class BaseController
     /**
      * redirect用ラッパー
      */
-    protected function redirect(Response $response, string $url, int $status = 302)
+    protected function redirect(Response $response, string $url, int $status = 302): Response
     {
         return $response
                    ->withHeader('Location', $url)
@@ -43,7 +48,7 @@ class BaseController
      *
      * @return mixed
      */
-    public function getParam(Request $request, string $key, mixed $default = null)
+    public function getParam(Request $request, string $key, mixed $default = null): mixed
     {
         $postParams = $request->getParsedBody();
         $getParams = $request->getQueryParams();
@@ -61,9 +66,10 @@ class BaseController
     /**
      * @param array|null $only list the keys to retrieve.
      *
-     * @return array|null
+     * @param array<int, string>|null $only
+     * @return array<string, mixed>|null
      */
-    public function getParams(Request $request, ?array $only = null)
+    public function getParams(Request $request, ?array $only = null): ?array
     {
         $params = $request->getQueryParams();
         $postParams = $request->getParsedBody();
@@ -84,8 +90,12 @@ class BaseController
         return $params;
     }
 
-    // テンプレート用インスタンスの取得とrenderの発行
-    protected function render($name, array $context = [])
+    /**
+     * テンプレート用インスタンスの取得とrenderの発行
+     *
+     * @param array<string, mixed> $context
+     */
+    protected function render(string $name, array $context = []): string
     {
         // デフォで使う値を追加する
         $context['hoge'] = 'hoge'; // サンプル
@@ -93,8 +103,12 @@ class BaseController
         return $this->container->get('renderer')->render($name, $context);
     }
 
-    // writeのラッパー
-    protected function write(Response $response, string $name, array $context = [])
+    /**
+     * writeのラッパー
+     *
+     * @param array<string, mixed> $context
+     */
+    protected function write(Response $response, string $name, array $context = []): Response
     {
         $response->getBody()->write($this->render($name, $context));
         return $response;

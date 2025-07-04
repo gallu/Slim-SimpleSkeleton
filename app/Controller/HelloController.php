@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -9,7 +10,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 class HelloController extends BaseController
 {
     // 多分「よくある」系の書き方
-    public function index(Request $request, Response $response, $args)
+    public function index(Request $request, Response $response, mixed $args): Response
     {
         // データを拾う
         $context = [
