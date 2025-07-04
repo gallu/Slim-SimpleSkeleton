@@ -9,12 +9,17 @@
         }
     ],
     "require": {
+        "php": "^8.3",
         "slim/slim": "^4.11",
         "slim/psr7": "^1.6",
         "php-di/slim-bridge": "^3.3",
+        "php-di/php-di": "^7.0",
         "twig/twig": "^3.7"
     },
     "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "friendsofphp/php-cs-fixer": "^3.66",
+        "phpunit/phpunit": "^11.5"
     },
     "autoload": {
         "psr-4": {
@@ -25,5 +30,8 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "start": "php -S 0.0.0.0:8080 -t public"
     }
 }
