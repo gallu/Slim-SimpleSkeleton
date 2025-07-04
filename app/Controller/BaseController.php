@@ -43,7 +43,7 @@ class BaseController
      *
      * @return mixed
      */
-    public function getParam(Request $request, string $key, $default = null)
+    public function getParam(Request $request, string $key, mixed $default = null)
     {
         $postParams = $request->getParsedBody();
         $getParams = $request->getQueryParams();
@@ -63,7 +63,7 @@ class BaseController
      *
      * @return array|null
      */
-    public function getParams(Request $request, array $only = null)
+    public function getParams(Request $request, ?array $only = null)
     {
         $params = $request->getQueryParams();
         $postParams = $request->getParsedBody();
@@ -85,7 +85,7 @@ class BaseController
     }
 
     // テンプレート用インスタンスの取得とrenderの発行
-    protected function render($name, array $context = array())
+    protected function render($name, array $context = [])
     {
         // デフォで使う値を追加する
         $context['hoge'] = 'hoge'; // サンプル
