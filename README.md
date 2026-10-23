@@ -34,3 +34,13 @@ composer start
 - `friendsofphp/php-cs-fixer`
 - `phpunit/phpunit`
 
+## ライセンス
+
+本プロジェクトはMIT Licenseで公開しています。
+商用・非商用を問わず、利用・改変・再配布が可能です。
+
+利用・再配布に際しては、MIT Licenseに従い、
+著作権表示およびライセンス表示を保持してください。
+
+詳細は [LICENSE](LICENSE) を参照してください。
+
